@@ -1,0 +1,47 @@
+<!DOCCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="title">{{text}}</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+    <a class="navbar-brand"><div id="nav-title">{{text}}</div></a>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="user">
+        <h4>{{head}}</h4>
+          <p class="indent"><a v-bind:href="lists.html_url" target="_blank">{{lists.name}}</a></p>
+          <p class="indent">{{lists.bio}}</p>
+          <p class="indent">{{lists.location}}</p>
+          <p class="indent"><a v-bind:href="lists.blog" target="_blank">{{lists.blog}}</a></p>
+      </div><!-- test -->
+    </div><!-- col -->
+
+    <div class="col-md-12">
+      <div id="repo">
+        <h4>{{head}}</h4>
+        <ul>
+          <li v-for="list in lists"><a v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;{{list.description}}</li>
+        </ul>
+      </div><!-- test -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="js/default.js"></script>
+</body>
+</html>
+
