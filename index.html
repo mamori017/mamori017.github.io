@@ -17,26 +17,32 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-6">
       <div id="user">
-        <h4>{{head}}</h4>
+        <h5>{{head}}</h5>
+          <p class="indent"><img v-bind:src="lists.avatar_url" class="thumb"/></p>
           <p class="indent"><a v-bind:href="lists.html_url" target="_blank">{{lists.name}}</a></p>
-          <p class="indent">{{lists.bio}}</p>
           <p class="indent">{{lists.location}}</p>
           <p class="indent"><a v-bind:href="lists.blog" target="_blank">{{lists.blog}}</a></p>
-      </div><!-- test -->
+      </div><!-- user -->
     </div><!-- col -->
 
-    <div class="col-md-12">
+    <div class="col-sm-6">
       <div id="repo">
-        <h4>{{head}}</h4>
+        <h5>{{head}}</h5>
         <ul>
-          <li v-for="list in lists"><a v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;{{list.description}}</li>
+          <li v-for="list in lists"><a v-bind:href="list.html_url" target="_blank">{{list.name}}</a><br/>{{list.description}}</li>
         </ul>
-      </div><!-- test -->
+      </div><!-- repo -->
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
+
+<div id="footer">
+  <div class="container">
+    <elem></elem>
+  </div><!-- container -->
+</div><!-- footer -->
 
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
