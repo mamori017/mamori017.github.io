@@ -1,5 +1,6 @@
 
 $(function () {
+  var strName = 'mamori017'
   var strTitle = 'mamori017.github.io'
   var apiUrl = 'https://api.github.com/users/mamori017'
   var dt = new Date();
@@ -42,17 +43,17 @@ $(function () {
     }
   });
 
-  // Footer
-  /*
+  // Navigation bar
   Vue.component('elem', {
-    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;mamori017</p>'
+    template: '<nav class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-header"><a class="navbar-brand"><div id="nav-title">' + strTitle + '</div></a></div></nav>'
   })
   var footer = new Vue({
-    el: '#footer',
+    el: '#navigation',
   })
-  */
+
+  // Footer  
   var extendElem = Vue.extend({
-    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;mamori017</p>'
+    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
   })
   Vue.component('elem', extendElem)
   var footer = new Vue({
@@ -62,6 +63,4 @@ $(function () {
   Vue.nextTick(function() {
     console.log('nextTick');
   })
-
 });
-
