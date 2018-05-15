@@ -12,12 +12,13 @@
 <body>
 
 <div id="navigation">
-    <elem></elem>
+  <navelem></navelem>
 </div><!-- navigation -->
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+
+    <div class="col-sm-4">
       <div id="user">
         <h5>{{head}}</h5>
           <p class="indent"><img v-bind:src="lists.avatar_url" class="thumb"/></p>
@@ -27,7 +28,7 @@
       </div><!-- user -->
     </div><!-- col -->
 
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <div id="repo">
         <h5>{{head}}</h5>
         <ul>
@@ -35,6 +36,12 @@
         </ul>
       </div><!-- repo -->
     </div><!-- col -->
+
+    <div class="col-sm-4">
+      <div id="repo">
+      </div><!-- repo -->
+    </div><!-- col -->
+
   </div><!-- row -->
 </div><!-- container -->
 

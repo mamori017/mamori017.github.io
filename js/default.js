@@ -47,20 +47,25 @@ $(function () {
   Vue.component('elem', {
     template: '<nav class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-header"><a class="navbar-brand"><div id="nav-title">' + strTitle + '</div></a></div></nav>'
   })
-  var footer = new Vue({
+
+  var navigation = new Vue({
     el: '#navigation',
   })
 
-  // Footer  
-  var extendElem = Vue.extend({
-    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
-  })
+  // Footer
   Vue.component('elem', extendElem)
   var footer = new Vue({
     el: '#footer'
   })
 
+  var extendElem = Vue.extend({
+    template: '<p class="text-muted text-center">&copy;&nbsp;'+ dt.getFullYear() + '&nbsp;' + strName + '</p>'
+  })
+
+  // NextTick
   Vue.nextTick(function() {
     console.log('nextTick');
   })
+
 });
+
