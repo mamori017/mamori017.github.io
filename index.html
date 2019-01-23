@@ -34,10 +34,14 @@
       <h4>{{head}}</h4>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
-          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a></p>
-          <p><small>{{list.description}}</small></p>
+          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
         </li>
       </ul>
+      <div v-if="lists.length > 3">
+        <p><a href="#" v-bind:href="more" target="_blank">More</a></p>
+      </div>
+
+
     </div>
   </div><!-- row -->
 

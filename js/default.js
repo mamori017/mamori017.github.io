@@ -2,6 +2,10 @@ $(function () {
   var apiUrl = "https://api.github.com/users/";
   var account = "mamori017"
   var dt = new Date();
+  var githuburl = "https://github.com/";
+  var githubrepoparam = "tab=repositories";
+  var sort = "sort=updated";
+
 
   // GitHub user info
   var user = new Vue({
@@ -20,30 +24,18 @@ $(function () {
     el:"#repo",
     data:{
       head:"Recent update repository",
-      lists:[]
+      lists:[],
+      more:githuburl  + account + "?" + githubrepoparam + "&" + sort
     }
   });
 
-  $.get(apiUrl + account + "/repos?sort=updated").then(function (lists) {
+  $.get(apiUrl + account + "/repos?" + sort).then(function (lists) {
     repos.lists = lists;
   });
 
   var navigation = new Vue({
     el: '#navigation',
   })
-
-  // Navigation bar
-
-  // Navigation bar
-  var navElem = Vue.extend({
-    template: "<nav class='navbar navbar-inverse navbar-fixed-top'><div class='navbar-header'><a class='navbar-brand'><div id='nav-title'>" + account + "</div></a></div></nav>"
-  });
-
-  Vue.component("elem", navElem)
-  var nav = new Vue({
-    el: "#navigation"
-  });
-
 
   // Footer
   var footerElem = Vue.extend({
