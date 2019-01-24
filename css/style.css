@@ -1,10 +1,16 @@
 body {
   font-family: 'Questrial', sans-serif;
-  padding-top: 80px;
 }
 
-img.thumb {
-  border-radius: 60px;
-  height: 120px;
-  width: 120px;
+.jumbotron {
+  background-image: url("https://avatars3.githubusercontent.com/u/7507701?v=4");
+  background-size: cover;
+  background-position: center 60%;
+  color: #ffffff;
+  text-shadow: 0px 5px 10px rgb(0, 0, 0);
 }
+
+#jumbotron a {
+  color: #ffffff;
+  text-decoration: none;
+  }

@@ -5,11 +5,10 @@ $(function () {
   var githuburl = "https://github.com/";
   var githubrepoparam = "tab=repositories";
   var sort = "sort=updated";
-
-
+ 
   // GitHub user info
   var user = new Vue({
-    el:"#user",
+    el:"#jumbotron",
     data:{
       lists:[]
     }

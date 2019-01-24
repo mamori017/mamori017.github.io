@@ -18,30 +18,39 @@
 </head>
 <body>
 
+<div class="jumbotron" id="jumbotron">
+  <div class="container">
+    <h1 class="display-4">{{lists.name}}</h1>
+    <p class="lead">{{lists.bio}}</p>
+    <p class="lead">{{lists.location}}</p>
+    <p class="lead">{{lists.company}}</p>
+    <p>
+      <a href="https://github.com/mamori017" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>&emsp;
+      <a href="https://www.instagram.com/mamori017" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>&emsp;
+      <a href="https://www.flickr.com/photos/mamori017" target="_blank"><i class="fab fa-flickr fa-2x" aria-hidden="true"></i></a>&emsp;
+      <a href="https://twitter.com/mamori017" target="_blank"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>&emsp;
+      <a href="https://mamori017.com" target="_blank"><i class="fas fa-home fa-2x" aria-hidden="true"></i></a>
+    </p>
+  </div>
+</div>
+  
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center" id="user">
-      <img v-bind:src="lists.avatar_url" class="thumb"/>
-      <h3 id="name">{{lists.name}}</h3>
-      <p>{{lists.bio}}</p>
-      <p>{{lists.company}}</p>
-      <p>{{lists.location}}</p>
     </div>
   </div><!-- row -->
  
   <div class="row">
-    <div class="col-md-12" id="repo">
+    <div class="col-md-6 offset-md-3" id="repo">
       <h4>{{head}}</h4>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
           <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
         </li>
       </ul>
-      <div v-if="lists.length > 3">
-        <p><a href="#" v-bind:href="more" target="_blank">More</a></p>
+      <div v-if="lists.length > 3" class="text-right">
+        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">More</a>
       </div>
-
-
     </div>
   </div><!-- row -->
 
