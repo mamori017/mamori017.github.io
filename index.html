@@ -24,13 +24,6 @@
     <p class="lead">{{lists.bio}}</p>
     <p class="lead">{{lists.location}}</p>
     <p class="lead">{{lists.company}}</p>
-    <p>
-      <a href="https://github.com/mamori017" target="_blank"><i class="fab fa-github fa-2x" aria-hidden="true"></i></a>&emsp;
-      <a href="https://www.instagram.com/mamori017" target="_blank"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>&emsp;
-      <a href="https://www.flickr.com/photos/mamori017" target="_blank"><i class="fab fa-flickr fa-2x" aria-hidden="true"></i></a>&emsp;
-      <a href="https://twitter.com/mamori017" target="_blank"><i class="fab fa-twitter fa-2x" aria-hidden="true"></i></a>&emsp;
-      <a href="https://mamori017.com" target="_blank"><i class="fas fa-home fa-2x" aria-hidden="true"></i></a>
-    </p>
   </div>
 </div>
   
@@ -54,6 +47,14 @@
     </div>
   </div><!-- row -->
 
+  <div class="row" id="link" style="margin-top: 3rem; margin-bottom: 3rem;">
+    <div class="col-md-6 offset-md-3 text-center">
+      <p v-for="item in items.list" style="display: inline;">
+        <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
+      </p>
+    </div>
+  </div><!-- row -->
+
   <footer id="footer">
     <elem></elem>
   </footer>
@@ -62,6 +63,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="./js/default.js"></script>
