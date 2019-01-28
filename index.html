@@ -20,46 +20,52 @@
 
 <div class="jumbotron" id="jumbotron">
   <div class="container">
-    <h1 class="display-4">{{lists.name}}</h1>
+    <h1 class="display-4">{{head}}</h1>
     <p class="lead">{{lists.bio}}</p>
-    <p class="lead">{{lists.location}}</p>
-    <p class="lead">{{lists.company}}</p>
   </div>
 </div>
   
-<div class="container">
+<div class="container"> 
   <div class="row">
-    <div class="col-md-12 text-center" id="user">
+    <div class="col-md-6 offset-md-3 content-margin" id="about">
+      <h3>{{head}}</h3>
+      <p v-if="about!=null" style="display:inline;">{{about}}&nbsp;</p>
+      <p v-if="lists.location!=null" style="display:inline;">From {{lists.location}}.&nbsp;</p>
+      <p v-if="lists.company!=null" style="display:inline;">{{lists.company}}.</p>
     </div>
-  </div><!-- row -->
- 
-  <div class="row">
-    <div class="col-md-6 offset-md-3" id="repo">
-      <h4>{{head}}</h4>
+
+    <div class="col-md-6 offset-md-3 content-margin" id="repo">
+      <h3>{{head}}</h3>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
           <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
         </li>
       </ul>
       <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">More</a>
+        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+      </div>
+    </div>
+
+    <div class="col-md-6 offset-md-3 content-margin" id="link">
+      <h3>{{head}}</h3>
+        <p v-for="item in items.list" style="display: inline;">
+          <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
+        </p>
+    </div>
+
+    <div class="col-md-6 offset-md-3 content-margin" id="contact">
+      <h3>{{head}}</h3>
+      <p>{{about}}</p>
+      <div class="text-right">
+        <a href="#" class="btn btn-info btn-md active" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact form</a>
       </div>
     </div>
   </div><!-- row -->
-
-  <div class="row" id="link" style="margin-top: 3rem; margin-bottom: 3rem;">
-    <div class="col-md-6 offset-md-3 text-center">
-      <p v-for="item in items.list" style="display: inline;">
-        <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
-      </p>
-    </div>
-  </div><!-- row -->
-
-  <footer id="footer">
-    <elem></elem>
-  </footer>
-
 </div><!-- container -->
+
+<footer id="footer">
+  <elem></elem>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

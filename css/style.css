@@ -10,7 +10,19 @@ body {
   text-shadow: 0px 5px 10px rgb(0, 0, 0);
 }
 
+footer {
+  background: #ffffff;
+  color: #000000;
+  bottom: 0;
+  width:100%;
+}
+
+
 #link a {
   color: #000000;
   text-decoration: none;
-  }
+}
+
+.content-margin{
+  margin-bottom: 20px;
+}
