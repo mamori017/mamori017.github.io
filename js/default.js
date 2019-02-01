@@ -1,11 +1,18 @@
 $(function () {
-  var apiUrl = "https://api.github.com/users/";
+  // Account
   var account = "mamori017";
-  var dt = new Date();
-  var githuburl = "https://github.com/";
-  var githubrepoparam = "tab=repositories";
+  // GitHub API
+  var apiUrl = "https://api.github.com/users/";
+  // Repository
+  var githubUrl = "https://github.com/";
+  var githubRepoParam = "tab=repositories";
   var sort = "sort=updated";
-  var formUrl = "https://mamori017.wufoo.com/forms/mamori017/";
+  // Gists
+  var gistUrl = "https://gist.github.com/";
+  // Form
+  var formUrl = "https://" + account + ".wufoo.com/forms/contact/";
+  // Etc
+  var dt = new Date();
 
   // GitHub user info
   $.get(apiUrl + account).then(function (lists) {
@@ -22,7 +29,7 @@ $(function () {
     }
   });
 
-  // about
+  // About
   var about = new Vue({
     el:"#about",
     data:{
@@ -33,16 +40,16 @@ $(function () {
   });
 
   // Social
-  var content = new Vue({
-    el: '#link',
+  var social = new Vue({
+    el: "#social",
     data: {
       head:"SNS",
       items: []
     },
     beforeCreate: function () {
-      axios.get('./content/content.json')
+      axios.get("./content/social.json")
           .then(function (response) {
-            content.items = response.data;
+            social.items = response.data;
           })
           .catch(function (error) {
               console.log(error);
@@ -56,7 +63,7 @@ $(function () {
     data:{
       head:"GitHub recent update",
       lists:[],
-      more:githuburl  + account + "?" + githubrepoparam + "&" + sort
+      more:githubUrl  + account + "?" + githubRepoParam + "&" + sort
     }
   });
 
@@ -64,12 +71,26 @@ $(function () {
     repos.lists = lists;
   });
 
-  // contact
+  // GitHub Gists
+  var gists = new Vue({
+    el:"#gist",
+    data:{
+      head:"Gist recent update",
+      lists:[],
+      more:gistUrl + account
+    }
+  });
+
+  $.get(apiUrl + account + "/gists").then(function (lists) {
+    gists.lists = lists;
+  });
+
+  // Contact
   var contact = new Vue({
     el:"#contact",
     data:{
       head:"Contact",
-      about:"Please contact me with this form.",
+      about:"Please contact me on this form, such as requests and messages. If you would like to contact by e-mail, please use mamori017 [at] outlook.jp.",
       url:formUrl,
     }
   });
