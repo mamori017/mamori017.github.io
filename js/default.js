@@ -57,6 +57,24 @@ $(function () {
     }
   })
 
+  // Web
+  var web = new Vue({
+    el: "#web",
+    data: {
+      head:"Web",
+      items: []
+    },
+    beforeCreate: function () {
+      axios.get("./content/web.json")
+          .then(function (response) {
+            web.items = response.data;
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+    }
+  })
+  
   // GitHub repository
   var repos = new Vue({
     el:"#repo",

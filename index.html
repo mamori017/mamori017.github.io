@@ -31,7 +31,7 @@
   <div class="row">
 
     <!-- About -->
-    <div class="col-md-6 offset-md-3 content-margin" id="about">
+    <div class="col-md-4 content-margin" id="about">
       <h3>{{head}}</h3>
       <p v-if="about!=null" style="display:inline;">{{about}}&nbsp;</p>
       <p v-if="lists.company!=null" style="display:inline;">{{lists.company}} </p>
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Repository -->
-    <div class="col-md-6 offset-md-3 content-margin" id="repo">
+    <div class="col-md-4 content-margin" id="repo">
       <h3>{{head}}</h3>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
@@ -52,7 +52,7 @@
     </div>
 
     <!-- Gist -->
-    <div class="col-md-6 offset-md-3 content-margin" id="gist">
+    <div class="col-md-4 content-margin" id="gist">
       <h3>{{head}}</h3>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
@@ -67,15 +67,23 @@
     </div>
 
     <!-- Social -->
-    <div class="col-md-6 offset-md-3 content-margin" id="social">
+    <div class="col-md-4 content-margin" id="social">
       <h3>{{head}}</h3>
-        <p v-for="item in items.list" style="display: inline;">
-          <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.icon" aria-hidden="true"></i></a>&nbsp;
+        <p v-for="item in items.list">
+          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>&nbsp;
+        </p>
+    </div>
+
+    <!-- Web -->
+    <div class="col-md-4 content-margin" id="web">
+      <h3>{{head}}</h3>
+        <p v-for="item in items.list">
+          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>&nbsp;
         </p>
     </div>
 
     <!-- Contact -->
-    <div class="col-md-6 offset-md-3 content-margin" id="contact">
+    <div class="col-md-4 content-margin" id="contact">
       <h3>{{head}}</h3>
       <p>{{about}}</p>
       <div class="text-right">
