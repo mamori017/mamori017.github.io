@@ -69,17 +69,21 @@
     <!-- Social -->
     <div class="col-md-4 content-margin" id="social">
       <h3>{{head}}</h3>
-        <p v-for="item in items.list">
-          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>&nbsp;
-        </p>
+      <ul>
+        <li v-for="item in items.list">
+          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>
+        </li>
+      </ul>
     </div>
 
     <!-- Web -->
     <div class="col-md-4 content-margin" id="web">
       <h3>{{head}}</h3>
-        <p v-for="item in items.list">
-          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>&nbsp;
-        </p>
+      <ul>
+        <li v-for="item in items.list">
+          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>
+        </li>
+      </ul>
     </div>
 
     <!-- Contact -->
