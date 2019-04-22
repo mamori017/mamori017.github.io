@@ -33,9 +33,9 @@
     <!-- About -->
     <div class="col-md-4 content-margin" id="about">
       <h3>{{head}}</h3>
-      <p v-if="about!=null" style="display:inline;">{{about}}&nbsp;</p>
+      <p v-if="about!=null" style="display:inline;">{{about}}&thinsp;</p>
       <p v-if="lists.company!=null" style="display:inline;">{{lists.company}} </p>
-      <p v-if="lists.location!=null" style="display:inline;">from {{lists.location}}.&nbsp;</p>
+      <p v-if="lists.location!=null" style="display:inline;">from {{lists.location}}.&thinsp;</p>
     </div>
 
     <!-- Repository -->
@@ -43,7 +43,7 @@
       <h3>{{head}}</h3>
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
-          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
+          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
         </li>
       </ul>
       <div v-if="lists.length > 3" class="text-right">
@@ -57,7 +57,7 @@
       <ul>
         <li v-for="(list, index) in lists" v-if="index < 3">
           <div v-for='file in list.files'>
-            <p><a href="#" v-bind:href="list.html_url" target="_blank">{{file.filename}}</a>&nbsp;-&nbsp;<small>{{list.description}}</small></p>
+            <p><a href="#" v-bind:href="list.html_url" target="_blank">{{file.filename}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
           </div>
         </li>
       </ul>
