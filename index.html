@@ -47,7 +47,7 @@
         </li>
       </ul>
       <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-info btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
       </div>
     </div>
 
@@ -62,18 +62,8 @@
         </li>
       </ul>
       <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-info btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
       </div>
-    </div>
-
-    <!-- Social -->
-    <div class="col-md-4 content-margin" id="social">
-      <h3>{{head}}</h3>
-      <ul>
-        <li v-for="item in items.list">
-          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>
-        </li>
-      </ul>
     </div>
 
     <!-- Web -->
@@ -91,7 +81,7 @@
       <h3>{{head}}</h3>
       <p>{{about}}</p>
       <div class="text-right">
-        <a href="#" class="btn btn-info btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact form</a>
+        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact form</a>
       </div>
     </div>
 
@@ -99,10 +89,22 @@
 
 </div><!-- Container -->
 
-<!-- Footer -->
-<footer id="footer">
-  <elem></elem>
+<footer>
+  <!-- Social -->
+  <div id="social" class="text-center">
+    <p v-for="item in items.list" style="display:inline;">
+      <a href="#" v-bind:href="item.url" target="_blank"><i v-bind:class="item.font"></i></a>&nbsp;&nbsp;
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <elem></elem>
+  </div>
 </footer>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

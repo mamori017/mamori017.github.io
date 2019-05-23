@@ -1,8 +1,8 @@
 {
   "list":[
-    {"url":"https://github.com/mamori017","name":"GitHub"},
-    {"url":"https://www.instagram.com/mamori017","name":"Instagram"},
-    {"url":"https://www.flickr.com/photos/mamori017","name":"flickr"},
-    {"url":"https://twitter.com/mamori017","name":"twitter"}
+    {"url":"https://github.com/mamori017","name":"GitHub","font":"fab fa-2x fa-github"},
+    {"url":"https://www.instagram.com/mamori017","name":"Instagram","font":"fab fa-2x fa-instagram"},
+    {"url":"https://www.flickr.com/photos/mamori017","name":"flickr","font":"fab fa-2x fa-flickr"},
+    {"url":"https://twitter.com/mamori017","name":"twitter","font":"fab fa-2x fa-twitter"}
   ]
 }
