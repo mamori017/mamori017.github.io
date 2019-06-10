@@ -8,7 +8,7 @@
   <meta content="mamori017.github.io" name="Description"/>
   <meta content="mamori017" name="Author"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title id="title">mamori017</title>
+  <title id="title">mamori017.github.io</title>
   <link rel="icon" href="./img/favicon.ico" type="image/x-icon" /> 
   <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -18,72 +18,85 @@
 </head>
 <body>
 
-<!-- Jumbotron -->
-<div class="jumbotron" id="jumbotron">
-  <div class="container">
-    <h1 class="display-4">{{head}}</h1>
-    <p class="lead">{{lists.bio}}</p>
-  </div>
-</div>
+<nav class='navbar navbar-dark bg-dark navbar-fixed-top'>
+  <div class='navbar-header' style="color: #FFFFFF;">mamori017</div>  
+</nav>
   
-<div class="container"> 
+<div class="container" style="margin-top:2em;"> 
 
   <div class="row">
+    <div class="col-md-9 col-sm-12">
 
-    <!-- About -->
-    <div class="col-md-4 content-margin" id="about">
-      <h3>{{head}}</h3>
-      <p v-if="about!=null" style="display:inline;">{{about}}&thinsp;</p>
-      <p v-if="lists.company!=null" style="display:inline;">{{lists.company}} </p>
-      <p v-if="lists.location!=null" style="display:inline;">from {{lists.location}}.&thinsp;</p>
-    </div>
-
-    <!-- Repository -->
-    <div class="col-md-4 content-margin" id="repo">
-      <h3>{{head}}</h3>
-      <ul>
-        <li v-for="(list, index) in lists" v-if="index < 3">
-          <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
-        </li>
-      </ul>
-      <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
-      </div>
-    </div>
-
-    <!-- Gist -->
-    <div class="col-md-4 content-margin" id="gist">
-      <h3>{{head}}</h3>
-      <ul>
-        <li v-for="(list, index) in lists" v-if="index < 3">
-          <div v-for='file in list.files'>
-            <p><a href="#" v-bind:href="list.html_url" target="_blank">{{file.filename}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
+      <div class="row">
+        <!-- About -->
+        <div class="col-md-6 col-sm-6 content-margin" id="about">
+          <h3>{{head}}</h3>
+          <p v-if="about!=null" style="display:inline;"><a v-bind:href="lists.html_url" target="_blank">{{lists.login}}</a>&thinsp;-&thinsp;{{about}}&thinsp;</p>
+          <p v-if="lists.company!=null" style="display:inline;">{{lists.company}} </p>
+          <p v-if="lists.location!=null" style="display:inline;">from {{lists.location}}.&thinsp;</p>
+        </div>
+    
+        <!-- Repository -->
+        <div class="col-md-6 col-sm-6 content-margin" id="repo">
+          <h3>{{head}}</h3>
+          <ul>
+            <li v-for="(list, index) in lists" v-if="index < 3">
+              <p><a href="#" v-bind:href="list.html_url" target="_blank">{{list.name}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
+            </li>
+          </ul>
+          <div v-if="lists.length > 3" class="text-right">
+            <a href="#" class="btn btn-outline-info btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
           </div>
-        </li>
-      </ul>
-      <div v-if="lists.length > 3" class="text-right">
-        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+        </div>
       </div>
+  
+      <div class="row">
+        <!-- Gist -->
+        <div class="col-md-6 col-sm-6 content-margin" id="gist">
+          <h3>{{head}}</h3>
+          <ul>
+            <li v-for="(list, index) in lists" v-if="index < 3">
+              <div v-for='file in list.files'>
+                <p><a href="#" v-bind:href="list.html_url" target="_blank">{{file.filename}}</a>&thinsp;-&thinsp;<small>{{list.description}}</small></p>
+              </div>
+            </li>
+          </ul>
+          <div v-if="lists.length > 3" class="text-right">
+            <a href="#" class="btn btn-outline-info btn-md" role="button" aria-pressed="true" v-bind:href="more" target="_blank">Show more</a>
+          </div>
+        </div>
+  
+        <!-- Web -->
+        <div class="col-md-6 col-sm-6 content-margin" id="web">
+          <h3>{{head}}</h3>
+          <ul>
+            <li v-for="item in items.list">
+              <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Contact -->
+        <div class="col-md-6 col-sm-6 content-margin" id="contact">
+          <h3>{{head}}</h3>
+          <p>{{about}}</p>
+          <div class="text-right">
+            <a href="#" class="btn btn-outline-info btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact form</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Web -->
-    <div class="col-md-4 content-margin" id="web">
-      <h3>{{head}}</h3>
-      <ul>
-        <li v-for="item in items.list">
-          <a href="#" v-bind:href="item.url" target="_blank">{{item.name}}</a>
-        </li>
-      </ul>
+    <div class="col-md-3 d-none d-md-block">
+        <iframe src='https://codealike.com/Profile/FactsWidgetWide/mamori017' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' width='250px' height='370px'></iframe>
+
     </div>
 
-    <!-- Contact -->
-    <div class="col-md-4 content-margin" id="contact">
-      <h3>{{head}}</h3>
-      <p>{{about}}</p>
-      <div class="text-right">
-        <a href="#" class="btn btn-primary btn-md" role="button" aria-pressed="true" v-bind:href="url" target="_blank">Contact form</a>
-      </div>
-    </div>
+
+
 
   </div><!-- row -->
 
